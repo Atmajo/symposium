@@ -13,7 +13,11 @@ const Header = () => {
     <header className="relative bg-white/20 backdrop-blur-md py-4 px-5 z-30">
       <nav className="flex justify-end">
         <ul className="flex flex-row text-black gap-10 font-semibold">
-          <li>Home</li>
+          <li>
+            <a href="/">
+              Home
+            </a>
+          </li>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2">
