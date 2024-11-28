@@ -1,42 +1,44 @@
-import Link from "next/link";
-import React from "react";
+"use client";
 
-const data = [
-  {
-    id: 1,
-    logo: "/iem.png",
-  },
-  {
-    id: 4,
-    logo: "/ips.png",
-  },
-  {
-    id: 5,
-    logo: "/rsc.webp",
-  },
-  {
-    id: 6,
-    logo: "/src.png",
-  },
-  {
-    id: 3,
-    logo: "/e5.jpeg",
-  },
-  {
-    id: 2,
-    logo: "/uem.png",
-  },
-];
+import { ChevronDownIcon } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="relative py-4 z-30">
-      <nav className="flex justify-between items-center">
-        {data.map(({ id, logo }) => (
-          <Link href={"/"} key={id}>
-            <img src={logo} alt={logo} className="h-20 w-max" />
-          </Link>
-        ))}
+    <header className="relative bg-white/20 backdrop-blur-md py-4 px-5 z-30">
+      <nav className="flex justify-end">
+        <ul className="flex flex-row text-black gap-10 font-semibold">
+          <li>Home</li>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center gap-2">
+                Registration & Venue <ChevronDownIcon size={16} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfgsTkZdkYDaeCYwdCK5K9AdCV_hiHKkL2Gjv7fkqRWWACtdA/viewform"
+                    target="_blank"
+                  >
+                    Registration Link
+                  </a>
+                </li>
+                <li>
+                  <Link href="/venue" target="_blank">
+                    Venue
+                  </Link>
+                </li>
+              </ul>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </ul>
       </nav>
     </header>
   );

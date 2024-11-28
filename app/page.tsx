@@ -1,14 +1,13 @@
 "use client";
 
-import Header from "@/components/header";
+import Header from "@/components/supporters";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen">
-      <Header />
-
-      <div className="p-6 flex items-center justify-center py-5 md:py-10">
+      <div className="relative p-6 flex items-center justify-center py-5 md:py-10 z-30">
         <div className="bg-blue-100 border-2 border-dotted border-blue-300 rounded-xl shadow-lg max-w-4xl p-8">
           <h1 className="text-red-600 font-bold text-center text-xl md:text-2xl uppercase mb-4">
             2-Day International Symposium
@@ -42,10 +41,20 @@ export default function Home() {
               Royal Society of Chemistry (RSC), UK
             </p>
           </div>
+          <div className="flex items-center justify-center mx-auto pt-10">
+            <a
+              className="text-lg text-white font-bold bg-gradient-to-t to-[#4EC9F5]/90 from-[#0C8040]/80 px-2 py-1 rounded-full"
+              target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfgsTkZdkYDaeCYwdCK5K9AdCV_hiHKkL2Gjv7fkqRWWACtdA/viewform"
+            >
+              Registration link
+              <ArrowRight size={24} className="inline-block ml-2" />
+            </a>
+          </div>
         </div>
       </div>
-
-      <div className="relative p-6 flex items-center justify-center gap-10 py-5 md:py-10 z-30">
+      
+      <div className="relative p-6 flex items-center justify-center gap-10 py-5 z-30">
         <h1 className="bg-amber-800 rounded-full py-2 px-5 md:px-10 md:py-5 md:text-xl font-bold text-center">
           31st JAN - 1st FEB, 2025
         </h1>
@@ -54,9 +63,12 @@ export default function Home() {
           onClick={() => (window.location.href = "/about")}
         >
           About Us
+          <ArrowRight size={24} className="inline-block ml-2" />
         </button>
       </div>
-      
+
+      <Header />
+
       <img
         src="/doodle.svg"
         alt="soodles"

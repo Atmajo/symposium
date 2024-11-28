@@ -21,6 +21,7 @@ export default function RootLayout({
       <body
         className={`relative ${inter.className} bg-gradient-to-t to-[#4EC9F5]/90 from-[#0C8040]/80`}
       >
+        <Header />
         {children}
       </body>
     </html>
